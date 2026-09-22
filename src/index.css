@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #F5F0E8;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-mint text-brand-black font-semibold px-6 py-3 rounded-full 
+           transition-all duration-200 hover:bg-opacity-90 hover:scale-[1.02] 
+           active:scale-[0.98] cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply border border-brand-cream text-brand-cream font-medium px-6 py-3 rounded-full 
+           transition-all duration-200 hover:bg-brand-cream hover:text-brand-black 
+           cursor-pointer;
+  }
+
+  .card {
+    @apply bg-brand-green bg-opacity-30 border border-white border-opacity-10 rounded-2xl p-6;
+  }
+
+  .input-field {
+    @apply w-full bg-white bg-opacity-5 border border-white border-opacity-15 rounded-xl 
+           px-4 py-3 text-brand-cream placeholder-brand-muted outline-none 
+           focus:border-brand-mint focus:border-opacity-60 transition-colors duration-200;
+  }
+
+  .label {
+    @apply text-xs font-medium text-brand-muted uppercase tracking-widest mb-1 block;
+  }
+
+  .section-tag {
+    @apply text-brand-mint text-sm font-medium tracking-wide;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #2C3E35; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4ECBA0; }
+
+/* Animated gradient ring for hero */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 20s linear infinite; }
+
+/* Number input hide arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] { -moz-appearance: textfield; }
