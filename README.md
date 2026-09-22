@@ -206,7 +206,7 @@ git init
 git add .
 git commit -m "initial commit: Digital Heroes platform"
 git branch -M main
-git remote add origin https://github.com/your-username/digital-heroes.git
+git remote add origin https://github.com/iqrakhatoon-dev/digital-heroes.git
 git push -u origin main
 ```
 
